@@ -3,8 +3,7 @@
 #include <string>
 #include <vector>
 
-class Inventory
-{
+class Inventory {
 public:
 	//constructor/destructor
 	Inventory();

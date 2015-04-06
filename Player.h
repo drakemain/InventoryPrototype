@@ -1,10 +1,11 @@
-#include "Inventory.h"
-#include <string>
-
-
 #pragma once
-class Player
-{
+
+#include <string>
+#include "Inventory.h"
+
+#include "Inventory.h"
+
+class Player {
 public:
 	//constructor/destructor
 	Player();
@@ -30,6 +31,4 @@ private:
 	std::string playerName;
 	double playerHealth;
 	Inventory playerInventory;
-
-
 };

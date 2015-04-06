@@ -40,9 +40,9 @@ int Inventory::getInventorySlotQuantity(std::string itemName) const
 		if (itemInSlot[i] == itemName)
 		{
 			return quantityInSlot[i];
-			break;
 		}//if
 	}//for
+
 	return 0; //returns 0 if item is not found
 }
 
@@ -51,41 +51,42 @@ void Inventory::displayInventory() const
 	for (int i = 0; i < inventorySpace; i++)
 	{
 		std::cout << i + 1 << ". " << itemInSlot[i];
-		if (quantityInSlot[i] > 0){std::cout << " X" << quantityInSlot[i] << std::endl;}
-		else { std::cout << std::endl; }
+
+		if (quantityInSlot[i] > 0) {
+			std::cout << " X" << quantityInSlot[i] << std::endl;
+		} else {
+			std::cout << std::endl;
+		}
 	}
 }
 
 //Add an item to inventory
 void Inventory::addToInventory(std::string invItem)
 {
-	for (int i = 0; i < inventorySpace; i++)
-	{
-		if ((invItem == itemInSlot[i]) && quantityInSlot[i] < 2)
-		{
+	for (int i = 0; i < inventorySpace; i++) {
+		if ((invItem == itemInSlot[i]) && quantityInSlot[i] < 2) {
 			quantityInSlot[i]++;
 			return;
-		}
-		else if (itemInSlot[i] == "")
-		{
+		} else if (itemInSlot[i] == "") {
 			itemInSlot[i] = invItem;
 			quantityInSlot[i]++;
 			return;
 		}//if
 	}//for
+
 	std::cout << "Inventory full" << std::endl;
 }
 
 //remove item from inventory
 void Inventory::removeFromInventory(int invSlot)
 {
-	if (quantityInSlot[invSlot] < 1)
-	{
+	if (quantityInSlot[invSlot] < 1) {
 		std::cout << "Nothing to drop" << std::endl;
-	}
-	else
-	{
+	} else {
 		quantityInSlot[invSlot]--;
-		if (quantityInSlot[invSlot] < 1){itemInSlot[invSlot] = "";}
+
+		if (quantityInSlot[invSlot] < 1) {
+			itemInSlot[invSlot] = "";
+		}
 	}//if
 }

@@ -1,9 +1,8 @@
 #pragma once
-class InventoryItem
-{
+
+class InventoryItem {
 public:
 	InventoryItem();
 	~InventoryItem();
-
 };
 
