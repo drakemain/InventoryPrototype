@@ -2,9 +2,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "InventoryItem.h"
 
-class Inventory
-{
+class Inventory{
 public:
 	//constructor/destructor
 	Inventory();
@@ -13,18 +13,21 @@ public:
 
 
 	//accessor functions
-	std::string getInventorySlotItem(int) const;
+	int getInventorySpace() const;
+	InventoryItem getInventorySlotItem(int) const;
+	std::string getInventorySlotItemName(int) const;
 	int getInventorySlotQuantity(int) const;
-	int getInventorySlotQuantity(std::string) const;
+	int getInventorySlotQuantity(InventoryItem) const;
 	void displayInventory() const;
 
 	//mutator functions
-	void addToInventory(std::string);
+	void addToInventory(InventoryItem);
 	void removeFromInventory(int);
 
 private:
 	int inventorySpace;
-	std::vector<std::string> itemInSlot;
-	std::vector<int> quantityInSlot;
+	bool targetDrop(std::string); //places dropped item into target inventory (work in progress)
+	void stackItems(); //stacks duplicate items together
+	std::vector<InventoryItem> itemSlot;
+	std::vector<int> quantitySlot;
 };
-
