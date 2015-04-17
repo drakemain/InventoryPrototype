@@ -2,9 +2,13 @@
 #include "World.h"
 
 
-World::World(){
+World::World() {
 	Inventory worldInventory(15);
 }
 
 
-World::~World(){}
+World::~World() {}
+
+Inventory& World::inventory() {
+	return this->worldInventory;
+}

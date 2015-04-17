@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-class InventoryItem{
+class InventoryItem {
 
 public:
 	InventoryItem();

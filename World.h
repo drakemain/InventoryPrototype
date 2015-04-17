@@ -2,12 +2,12 @@
 #include "Inventory.h"
 #include <string>
 
-class World{
+class World {
 
 public:
 	World();
 	~World();
-
+	Inventory& inventory();
 
 
 private:
